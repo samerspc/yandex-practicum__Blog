@@ -14,30 +14,26 @@ import styles from './styles/index.module.scss';
 const domNode = document.getElementById('root') as HTMLDivElement;
 const root = createRoot(domNode);
 
+
+
 const App = () => {
-	const [ articleState, setArticleState ] = useState<ArticleStateType | null>(null);
+	const [ articleState, setArticleState ] = useState<ArticleStateType>(defaultArticleState);
 
-	useEffect(() => {
-		setArticleState(defaultArticleState);
-	}, []);
-
-	const updateArticleState = () => {
-		
+	const getArticleStyles = (): CSSProperties => {
+		return {
+			'--font-family': articleState.fontFamilyOption.value,
+			'--font-size': articleState.fontSizeOption.value,
+			'--font-color': articleState.fontColor.value,
+			'--container-width': articleState.contentWidth.value,
+			'--bg-color': articleState.backgroundColor.value,
+		} as CSSProperties;
 	}
 	
 	return (
 		<div
 			className={clsx(styles.main)}
-			style={
-				{
-					'--font-family': defaultArticleState.fontFamilyOption.value,
-					'--font-size': defaultArticleState.fontSizeOption.value,
-					'--font-color': defaultArticleState.fontColor.value,
-					'--container-width': defaultArticleState.contentWidth.value,
-					'--bg-color': defaultArticleState.backgroundColor.value,
-				} as CSSProperties
-			}>
-			<ArticleParamsForm />
+			style={getArticleStyles()}>
+			<ArticleParamsForm setArticleState={setArticleState}/>
 			<Article />
 		</div>
 	);

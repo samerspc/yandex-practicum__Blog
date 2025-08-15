@@ -1,4 +1,4 @@
-import { useState, FormEvent } from 'react';
+import { useState, useLayoutEffect, FormEvent } from 'react';
 
 import { ArrowButton } from 'components/arrow-button';
 import { Button } from 'components/button';
@@ -15,10 +15,15 @@ import { backgroundColors } from 'src/constants/articleProps';
 import { contentWidthArr } from 'src/constants/articleProps';
 
 import { OptionType } from 'src/constants/articleProps';
+import { ArticleStateType } from 'src/constants/articleProps';
 
 import styles from './ArticleParamsForm.module.scss';
 
-export const ArticleParamsForm = () => {
+type TArticleParamsForm = {
+	setArticleState: (arg: ArticleStateType) => void;
+}
+
+export const ArticleParamsForm = ({ setArticleState}: TArticleParamsForm) => {
 	const [ isAsideOpen, setIsAsideOpen ] = useState<boolean>(false);
 	const [ fontFamily, setFontFamily ] = useState<OptionType>(fontFamilyOptions[0]);
 	const [ fontSize, setFontSize ] = useState<OptionType>(fontSizeOptions[0]);
@@ -26,37 +31,51 @@ export const ArticleParamsForm = () => {
 	const [ backgroundColor, setBackgroundColor ] = useState<OptionType>(backgroundColors[0]);
 	const [ contentWidth, setContentWidth ] = useState<OptionType>(contentWidthArr[0]);
 
-	const fontFamilyOnChange = (selected: OptionType) => {
+	const fontFamilyOnChange = (selected: OptionType): void => {
 		setFontFamily(selected);
 		console.log(`Choosed font family: ${selected.title}.`);
 	}
 
-	const fontSizeOnChange = (selected: OptionType) => {
+	const fontSizeOnChange = (selected: OptionType): void => {
 		setFontSize(selected);
 		console.log(`Choosed font size: ${selected.title}.`);
 	}
 
-	const fontColorOnChange = (selected: OptionType) => {
+	const fontColorOnChange = (selected: OptionType): void => {
 		setFontColor(selected);
 		console.log(`Choosed font color: ${selected.title}.`);
 	}
 
-	const backgroundColorOnChange = (selected: OptionType) => {
+	const backgroundColorOnChange = (selected: OptionType): void => {
 		setBackgroundColor(selected);
 		console.log(`Choosed background color: ${selected.title}.`);
 	}
 
-	const contentWidthOnChange = (selected: OptionType) => {
+	const contentWidthOnChange = (selected: OptionType): void => {
 		setContentWidth(selected);
 		console.log(`Choosed content width: ${selected.title}.`);
 	}
 
-	const handleResetForm = () => {
+	const handleResetForm = (): void => {
+		setFontFamily(fontFamilyOptions[0]);
+		setFontSize(fontSizeOptions[0]);
+		setFontColor(fontColors[0]);
+		setBackgroundColor(backgroundColors[0]);
+		setContentWidth(contentWidthArr[0]);
 		console.log('Form reseted');
 	}
 
-	const handleSubmitForm = (e: FormEvent<HTMLFormElement>) => {
+	const handleSubmitForm = (e: FormEvent<HTMLFormElement>): void => {
 		e.preventDefault();
+
+		setArticleState({
+			fontFamilyOption: fontFamily,
+			fontColor: fontColor,
+			backgroundColor: backgroundColor,
+			contentWidth: contentWidth,
+			fontSizeOption: fontSize,
+		} as ArticleStateType)
+
 		console.log('Form submitted');
 	}
 
