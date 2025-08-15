@@ -56,18 +56,7 @@ export const ArticleParamsForm = ({ setArticleState}: TArticleParamsForm) => {
 		console.log(`Choosed content width: ${selected.title}.`);
 	}
 
-	const handleResetForm = (): void => {
-		setFontFamily(fontFamilyOptions[0]);
-		setFontSize(fontSizeOptions[0]);
-		setFontColor(fontColors[0]);
-		setBackgroundColor(backgroundColors[0]);
-		setContentWidth(contentWidthArr[0]);
-		console.log('Form reseted');
-	}
-
-	const handleSubmitForm = (e: FormEvent<HTMLFormElement>): void => {
-		e.preventDefault();
-
+	const updateArticalState = (): void => {
 		setArticleState({
 			fontFamilyOption: fontFamily,
 			fontColor: fontColor,
@@ -75,7 +64,22 @@ export const ArticleParamsForm = ({ setArticleState}: TArticleParamsForm) => {
 			contentWidth: contentWidth,
 			fontSizeOption: fontSize,
 		} as ArticleStateType)
+	}
 
+	const handleResetForm = (): void => {
+		setFontFamily(fontFamilyOptions[0]);
+		setFontSize(fontSizeOptions[0]);
+		setFontColor(fontColors[0]);
+		setBackgroundColor(backgroundColors[0]);
+		setContentWidth(contentWidthArr[0]);
+		
+		updateArticalState();
+		console.log('Form reseted');
+	}
+
+	const handleSubmitForm = (e: FormEvent<HTMLFormElement>): void => {
+		e.preventDefault();
+		updateArticalState();
 		console.log('Form submitted');
 	}
 
