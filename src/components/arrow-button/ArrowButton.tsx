@@ -1,4 +1,3 @@
-import { useState, RefObject, forwardRef } from 'react';
 import clsx from 'clsx';
 import arrow from 'src/images/arrow.svg';
 
@@ -23,7 +22,7 @@ export const ArrowButton = ({isAsideOpen, setIsAsideOpen}: IArrowButton) => {
 			role='button'
 			aria-label='Открыть/Закрыть форму параметров статьи'
 			tabIndex={0}
-			className={`${styles.container} ${isAsideOpen ? styles.container_open : ''}`}
+			className={clsx(styles.container, isAsideOpen && styles.container_open)}
 			onClick={handleClick}
 		>
 			<img

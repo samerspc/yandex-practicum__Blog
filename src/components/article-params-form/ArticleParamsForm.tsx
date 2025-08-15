@@ -1,4 +1,4 @@
-import { useState, useLayoutEffect, FormEvent } from 'react';
+import { useState, FormEvent } from 'react';
 
 import { ArrowButton } from 'components/arrow-button';
 import { Button } from 'components/button';
@@ -16,6 +16,8 @@ import { contentWidthArr } from 'src/constants/articleProps';
 
 import { OptionType } from 'src/constants/articleProps';
 import { ArticleStateType } from 'src/constants/articleProps';
+
+import clsx from 'clsx';
 
 import styles from './ArticleParamsForm.module.scss';
 
@@ -72,7 +74,7 @@ export const ArticleParamsForm = ({ setArticleState}: TArticleParamsForm) => {
 		setFontColor(fontColors[0]);
 		setBackgroundColor(backgroundColors[0]);
 		setContentWidth(contentWidthArr[0]);
-		
+
 		updateArticalState();
 		console.log('Form reseted');
 	}
@@ -87,7 +89,7 @@ export const ArticleParamsForm = ({ setArticleState}: TArticleParamsForm) => {
 		<>
 			<ArrowButton isAsideOpen={isAsideOpen} setIsAsideOpen={setIsAsideOpen}/>
 			<aside
-				className={`${styles.container} ${isAsideOpen ? styles.container_open : ''}`}>
+				className={clsx(styles.container, isAsideOpen && styles.container_open)}>
 				<form className={styles.form} onReset={handleResetForm} onSubmit={handleSubmitForm}>
 					
 					<Text as={'h2'} size={31} weight={800} uppercase={true} align={'left'}>
