@@ -11,9 +11,10 @@ type Story = StoryObj<typeof ArrowButton>;
 
 export const ArrowButtonStory: Story = {
 	render: () => {
+		const mockRef = { current: null };
 		return (
 			<>
-				<ArrowButton />
+				<ArrowButton isAsideOpen={false} setIsAsideOpen={(a: boolean) => {}} />
 			</>
 		);
 	},

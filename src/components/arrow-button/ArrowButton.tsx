@@ -1,20 +1,30 @@
-import { useState } from 'react';
+import { useState, RefObject, forwardRef } from 'react';
 import clsx from 'clsx';
 import arrow from 'src/images/arrow.svg';
 
 import styles from './ArrowButton.module.scss';
 
-/** Функция для обработки открытия/закрытия формы */
 export type OnClick = () => void;
 
-export const ArrowButton = () => {
+interface IArrowButton {
+	isAsideOpen: boolean;
+	setIsAsideOpen: (arg: boolean) => void;
+}
+
+export const ArrowButton = ({isAsideOpen, setIsAsideOpen}: IArrowButton) => {
+
+	const handleClick: OnClick = () => {
+		isAsideOpen ? setIsAsideOpen(false) : setIsAsideOpen(true);
+		console.log('Arrow button clicked.')
+	}	
+
 	return (
-		/* Не забываем указаывать role и aria-label атрибуты для интерактивных элементов */
 		<div
 			role='button'
 			aria-label='Открыть/Закрыть форму параметров статьи'
 			tabIndex={0}
-			className={styles.container}
+			className={`${styles.container} ${isAsideOpen ? styles.container_open : ''}`}
+			onClick={handleClick}
 		>
 			<img
 				src={arrow}
