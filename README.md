@@ -1,93 +1,196 @@
-# SP10_BlogCustomizer
+# 📝 Blog Customizer
 
+<div align="center">
 
+![React](https://img.shields.io/badge/React-18.2.0-61DAFB?style=for-the-badge&logo=react&logoColor=black)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.0.4-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![Webpack](https://img.shields.io/badge/Webpack-5.81.0-8DD6F9?style=for-the-badge&logo=webpack&logoColor=black)
+![Sass](https://img.shields.io/badge/Sass-1.69.7-CC6699?style=for-the-badge&logo=sass&logoColor=white)
+![Storybook](https://img.shields.io/badge/Storybook-7.6.10-FF4785?style=for-the-badge&logo=storybook&logoColor=white)
 
-## Getting started
+**Проектная работа по курсу "Фронтенд разработчик" от Яндекс Практикума**
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+</div>
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+## Описание проекта
 
-## Add your files
+Blog Customizer — это интерактивное веб-приложение для настройки и кастомизации блогов. Пользователи могут изменять различные параметры отображения статей, такие как размеры контента, шрифты, цвета и другие стилистические элементы в реальном времени.
 
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
+### Основные возможности
+
+- **Интерактивная настройка стилей** — изменение параметров блога в реальном времени
+- **Адаптивный дизайн** — корректное отображение на всех устройствах
+- **Предварительный просмотр** — мгновенное отображение изменений
+- **Модульная архитектура** — компонентный подход с использованием React
+- **Storybook** — документация и тестирование компонентов
+
+## Технологии
+
+### Frontend
+- ![React](https://img.shields.io/badge/-React-61DAFB?logo=react&logoColor=black&style=flat) **React 18.2.0** — библиотека для создания пользовательских интерфейсов
+- ![TypeScript](https://img.shields.io/badge/-TypeScript-3178C6?logo=typescript&logoColor=white&style=flat) **TypeScript 5.0.4** — типизированный JavaScript
+- ![Sass](https://img.shields.io/badge/-Sass-CC6699?logo=sass&logoColor=white&style=flat) **Sass** — препроцессор CSS с поддержкой модулей
+
+### Build Tools
+- ![Webpack](https://img.shields.io/badge/-Webpack-8DD6F9?logo=webpack&logoColor=black&style=flat) **Webpack 5.81.0** — сборщик модулей
+- ![PostCSS](https://img.shields.io/badge/-PostCSS-DD3A0A?logo=postcss&logoColor=white&style=flat) **PostCSS** — инструмент для трансформации CSS
+- ![Autoprefixer](https://img.shields.io/badge/-Autoprefixer-CC6699?logo=autoprefixer&logoColor=white&style=flat) **Autoprefixer** — автоматическое добавление вендорных префиксов
+
+### Development Tools
+- ![Storybook](https://img.shields.io/badge/-Storybook-FF4785?logo=storybook&logoColor=white&style=flat) **Storybook 7.6.10** — среда для разработки и тестирования компонентов
+- ![ESLint](https://img.shields.io/badge/-ESLint-4B32C3?logo=eslint&logoColor=white&style=flat) **ESLint** — линтер для JavaScript/TypeScript
+- ![Prettier](https://img.shields.io/badge/-Prettier-F7B93E?logo=prettier&logoColor=black&style=flat) **Prettier** — форматировщик кода
+- ![Stylelint](https://img.shields.io/badge/-Stylelint-263238?logo=stylelint&logoColor=white&style=flat) **Stylelint** — линтер для CSS/SCSS
+
+### Git Hooks & Quality
+- ![Husky](https://img.shields.io/badge/-Husky-000000?logo=husky&logoColor=white&style=flat) **Husky** — Git hooks
+- ![Commitizen](https://img.shields.io/badge/-Commitizen-000000?logo=commitizen&logoColor=white&style=flat) **Commitizen** — стандартизация коммитов
+- ![Lint-staged](https://img.shields.io/badge/-Lint--staged-000000?logo=lint-staged&logoColor=white&style=flat) **Lint-staged** — линтинг только измененных файлов
+
+## Быстрый старт
+
+### Предварительные требования
+
+- Node.js (версия 16 или выше)
+- Yarn или npm
+
+### Установка
+
+1. **Клонируйте репозиторий**
+   ```bash
+   git clone https://practicum.gitlab.yandexcloud.net/web-faculty-content/project-drafts/sp10_blogcustomizer.git
+   cd sp10_blogcustomizer
+   ```
+
+2. **Установите зависимости**
+   ```bash
+   yarn install
+   # или
+   npm install
+   ```
+
+3. **Запустите проект в режиме разработки**
+   ```bash
+   yarn start
+   # или
+   npm start
+   ```
+
+4. **Откройте браузер**
+   ```
+   http://localhost:8080
+   ```
+
+## Доступные команды
+
+| Команда | Описание |
+|---------|----------|
+| `yarn start` | Запуск проекта в режиме разработки |
+| `yarn build` | Сборка проекта для продакшена |
+| `yarn storybook` | Запуск Storybook для разработки компонентов |
+| `yarn build-storybook` | Сборка Storybook |
+| `yarn lint` | Проверка кода с помощью ESLint |
+| `yarn format` | Форматирование кода с помощью Prettier |
+| `yarn test` | Запуск всех проверок качества кода |
+| `yarn commit` | Создание коммита с помощью Commitizen |
+
+## Структура проекта
 
 ```
-cd existing_repo
-git remote add origin https://practicum.gitlab.yandexcloud.net/web-faculty-content/project-drafts/sp10_blogcustomizer.git
-git branch -M master
-git push -uf origin master
+src/
+├── components/          # React компоненты
+│   ├── arrow-button/    # Кнопка со стрелкой
+│   ├── article/         # Компонент статьи
+│   ├── article-params-form/ # Форма параметров статьи
+│   ├── button/          # Базовая кнопка
+│   ├── radio-group/     # Группа радио-кнопок
+│   ├── select/          # Компонент выбора
+│   ├── separator/       # Разделитель
+│   ├── spacing/         # Компонент отступов
+│   ├── story-decorator/ # Декоратор для Storybook
+│   └── text/            # Текстовые компоненты
+├── constants/           # Константы приложения
+├── fonts/              # Шрифты проекта
+├── images/             # Изображения и иконки
+├── styles/             # Глобальные стили
+└── index.tsx           # Точка входа приложения
 ```
 
-## Integrate with your tools
+## Компоненты
 
-- [ ] [Set up project integrations](https://practicum.gitlab.yandexcloud.net/web-faculty-content/project-drafts/sp10_blogcustomizer/-/settings/integrations)
+Проект включает в себя набор переиспользуемых компонентов:
 
-## Collaborate with your team
+- **Article** — компонент для отображения статей
+- **ArticleParamsForm** — форма для настройки параметров статьи
+- **Button** — универсальная кнопка с различными вариантами
+- **Select** — выпадающий список с кастомным дизайном
+- **RadioGroup** — группа радио-кнопок
+- **Text** — текстовые компоненты с различными стилями
 
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Set auto-merge](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
+Каждый компонент имеет:
+- TypeScript типизацию
+- SCSS модули для стилизации
+- Storybook истории для документации
+- Адаптивный дизайн
 
-## Test and Deploy
+## Конфигурация
 
-Use the built-in continuous integration in GitLab.
+### Webpack
+Проект использует кастомную конфигурацию Webpack с поддержкой:
+- TypeScript
+- SCSS модулей
+- SVG как React компонентов
+- Hot Module Replacement
+- Оптимизация для продакшена
 
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/index.html)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing (SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
+### ESLint & Prettier
+Настроены правила для обеспечения качества кода:
+- TypeScript правила
+- React правила
+- Accessibility правила
+- Автоматическое форматирование
 
-***
+### Git Hooks
+Настроены pre-commit хуки для:
+- Автоматического линтинга
+- Форматирования кода
+- Проверки стилей
 
-# Editing this README
+## Документация
 
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thanks to [makeareadme.com](https://www.makeareadme.com/) for this template.
+### Storybook
+Для просмотра документации компонентов запустите:
+```bash
+yarn storybook
+```
 
-## Suggestions for a good README
+Storybook доступен по адресу: `http://localhost:6006`
 
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
+### Компоненты
+Каждый компонент имеет:
+- Описание назначения
+- Примеры использования
+- Параметры (props)
+- Интерактивные примеры
 
-## Name
-Choose a self-explaining name for your project.
+## Вклад в проект
 
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
+1. Форкните репозиторий
+2. Создайте ветку для новой функции (`git checkout -b feature/amazing-feature`)
+3. Зафиксируйте изменения (`git commit -m 'Add amazing feature'`)
+4. Отправьте изменения в ветку (`git push origin feature/amazing-feature`)
+5. Откройте Pull Request
 
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
+### Стандарты кода
 
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
+- Используйте TypeScript для всех новых файлов
+- Следуйте правилам ESLint и Prettier
+- Пишите тесты для новых компонентов
+- Обновляйте документацию в Storybook
 
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
+## Лицензия
 
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
+Этот проект создан в рамках обучения на курсе "Фронтенд разработчик" от Яндекс Практикума.
 
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
+---
 
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
-
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
-
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
-
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
-
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
-
-## License
-For open source projects, say how it is licensed.
-
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
